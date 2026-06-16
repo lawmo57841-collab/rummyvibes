@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RummyVibes - Custom Keyboard Sounds</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎹 RummyVibes</h1>
+            <p class="tagline">Make your keyboard sound exactly how you want</p>
+        </header>
+
+        <main>
+            <!-- Sound Profile Selection -->
+            <section class="panel">
+                <h2>Sound Profile</h2>
+                <div class="profile-buttons">
+                    <button class="profile-btn active" data-profile="thocky">Thocky</button>
+                    <button class="profile-btn" data-profile="clicky">Clicky</button>
+                    <button class="profile-btn" data-profile="linear">Linear</button>
+                    <button class="profile-btn" data-profile="hollow">Hollow</button>
+                    <button class="profile-btn" data-profile="crispy">Crispy</button>
+                </div>
+            </section>
+
+            <!-- Sound Settings -->
+            <section class="panel">
+                <h2>Customize Your Sound</h2>
+                <div class="settings-grid">
+                    <div class="setting">
+                        <label for="volume">Volume: <span id="volumeValue">100</span>%</label>
+                        <input type="range" id="volume" min="0" max="100" value="100">
+                    </div>
+                    <div class="setting">
+                        <label for="pitch">Pitch: <span id="pitchValue">100</span>%</label>
+                        <input type="range" id="pitch" min="50" max="150" value="100">
+                    </div>
+                    <div class="setting">
+                        <label for="speed">Speed: <span id="speedValue">100</span>%</label>
+                        <input type="range" id="speed" min="50" max="150" value="100">
+                    </div>
+                    <div class="setting">
+                        <label for="reverb">Reverb: <span id="reverbValue">0</span>%</label>
+                        <input type="range" id="reverb" min="0" max="100" value="0">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Preset Sound Sets -->
+            <section class="panel">
+                <h2>Sound Sets</h2>
+                <div class="soundset-buttons">
+                    <button class="soundset-btn active" data-soundset="default">
+                        <span class="soundset-icon">🎵</span>
+                        Default
+                    </button>
+                    <button class="soundset-btn" data-soundset="mechanical">
+                        <span class="soundset-icon">⚙️</span>
+                        Mechanical
+                    </button>
+                    <button class="soundset-btn" data-soundset="space">
+                        <span class="soundset-icon">🌌</span>
+                        Space
+                    </button>
+                    <button class="soundset-btn" data-soundset="nature">
+                        <span class="soundset-icon">🌿</span>
+                        Nature
+                    </button>
+                    <button class="soundset-btn" data-soundset="arcade">
+                        <span class="soundset-icon">🕹️</span>
+                        Arcade
+                    </button>
+                </div>
+            </section>
+
+            <!-- Test Area -->
+            <section class="panel">
+                <h2>Test Your Keyboard</h2>
+                <div class="test-area">
+                    <p>Start typing here to hear your custom keyboard sound...</p>
+                    <textarea id="testArea" placeholder="Type anything to hear your keyboard sounds..." spellcheck="false"></textarea>
+                </div>
+            </section>
+
+            <!-- Statistics -->
+            <section class="panel">
+                <h2>Statistics</h2>
+                <div class="stats-grid">
+                    <div class="stat">
+                        <span class="stat-label">Keys Pressed</span>
+                        <span class="stat-value" id="keyCount">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Current Profile</span>
+                        <span class="stat-value" id="currentProfile">Thocky</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Current Soundset</span>
+                        <span class="stat-value" id="currentSoundset">Default</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Master Volume</span>
+                        <span class="stat-value" id="masterVolume">100%</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Reset Button -->
+            <section class="panel">
+                <button id="resetBtn" class="reset-btn">Reset to Defaults</button>
+            </section>
+        </main>
+
+        <footer>
+            <p>Made with 🎹 for keyboard enthusiasts</p>
+        </footer>
+    </div>
+
+    <script src="sounds.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

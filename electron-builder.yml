@@ -1,0 +1,43 @@
+appId: com.rummyvibes.app
+productName: RummyVibes
+directories:
+  buildResources: assets
+files:
+  - from: .
+    to: .
+    filter:
+      - '**/*'
+      - '!node_modules'
+      - '!.git'
+      - '!dist'
+      - '!build'
+      - '!.gitignore'
+      - '!*.yml'
+
+win:
+  target:
+    - nsis
+    - portable
+  certificateFile: null
+  certificatePassword: null
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: RummyVibes
+
+mac:
+  target:
+    - dmg
+    - zip
+  category: public.app-category.utilities
+  icon: assets/icon.icns
+
+linux:
+  target:
+    - AppImage
+    - deb
+  category: Utility
+  icon: assets/icon.png

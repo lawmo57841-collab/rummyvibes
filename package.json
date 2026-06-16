@@ -1,0 +1,78 @@
+{
+  "name": "rummyvibes",
+  "version": "1.0.0",
+  "description": "A keyboard app where you can make your keyboard sound Thocky and Whatever Fits for you",
+  "main": "electron-main.js",
+  "homepage": "./",
+  "scripts": {
+    "electron-start": "electron .",
+    "electron-dev": "concurrently \"npm run web-serve\" \"wait-on http://localhost:8000 && npm run electron-start\"",
+    "electron-build": "electron-builder",
+    "build": "npm run electron-build",
+    "start": "npm run electron-dev",
+    "web-serve": "npx http-server . -p 8000",
+    "dev": "npx live-server --port=8000",
+    "dist": "electron-builder --publish never"
+  },
+  "keywords": [
+    "keyboard",
+    "sounds",
+    "mechvibes",
+    "mechanical",
+    "typing",
+    "customizable",
+    "desktop",
+    "electron"
+  ],
+  "author": "RummyVibes Contributors",
+  "license": "MIT",
+  "dependencies": {
+    "electron-is-dev": "^3.0.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "electron": "^27.0.0",
+    "electron-builder": "^24.6.4",
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2",
+    "wait-on": "^7.1.0"
+  },
+  "build": {
+    "appId": "com.rummyvibes.app",
+    "productName": "RummyVibes",
+    "files": [
+      "index.html",
+      "styles.css",
+      "app.js",
+      "sounds.js",
+      "electron-main.js",
+      "preload.js"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    },
+    "mac": {
+      "target": [
+        "dmg",
+        "zip"
+      ],
+      "category": "public.app-category.utilities"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb"
+      ],
+      "category": "Utility"
+    }
+  }
+}
