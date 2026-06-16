@@ -22,18 +22,10 @@ jobs:
       - name: Build Windows portable
         run: npm run electron-build -- --win portable --x64 --publish never
 
-      - name: Authenticate GH CLI
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "$GITHUB_TOKEN" | gh auth login --with-token
-
       - name: Upload artifacts to release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TAG=${{ github.event.release.tag_name }}
-          gh release upload "$TAG" dist/* --clobber || true
+          GH_TOKEN=${{ secrets.GITHUB_TOKEN }} gh release upload "$TAG" dist/* --clobber || true
 
   build-macos:
     name: Build macOS Installer
@@ -52,15 +44,7 @@ jobs:
       - name: Build macOS (dmg)
         run: npm run electron-build -- --mac dmg --x64 --publish never
 
-      - name: Authenticate GH CLI
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          echo "$GITHUB_TOKEN" | gh auth login --with-token
-
       - name: Upload macOS artifacts to release
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           TAG=${{ github.event.release.tag_name }}
-          gh release upload "$TAG" dist/* --clobber || true
+          GH_TOKEN=${{ secrets.GITHUB_TOKEN }} gh release upload "$TAG" dist/* --clobber || true
