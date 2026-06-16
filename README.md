@@ -31,3 +31,17 @@ cd rummyvibes
 npm install
 npm run build
 ``` 
+
+## 📥 Release Downloads
+
+Pre-built Linux installers are available on the Releases page:
+
+- AppImage: https://github.com/lawmo57841-collab/rummyvibes/releases/download/v1.0.0/RummyVibes-1.0.0.AppImage
+- Debian (.deb): https://github.com/lawmo57841-collab/rummyvibes/releases/download/v1.0.0/rummyvibes_1.0.0_amd64.deb
+
+Windows `.exe` installers are not included in this release because Windows builds must be produced on Windows runners (or built locally). You can either:
+
+- Build locally on Windows using the included `build-win.bat` script (see `BUILD_PLATFORMS.md`), or
+- Ask me to add a GitHub Actions workflow to automatically build Windows and macOS installers on release and upload them to the Releases page.
+
+If you'd like the automatic CI builds, tell me and I'll add the workflow to this repo.
