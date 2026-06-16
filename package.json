@@ -24,7 +24,10 @@
     "desktop",
     "electron"
   ],
-  "author": "RummyVibes Contributors",
+  "author": {
+    "name": "RummyVibes Contributors",
+    "email": "support@rummyvibes.dev"
+  },
   "license": "MIT",
   "dependencies": {
     "electron-is-dev": "^3.0.1"
